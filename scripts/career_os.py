@@ -96,9 +96,8 @@ def daily(args: argparse.Namespace) -> list[Path]:
         next_steps = ask_list("What should happen next?")
 
     if not shipped and not learned and not next_steps:
-        shipped = ["No public output logged yet. Planning or offline work only."]
-        learned = ["Consistency means logging honestly, including light days."]
-        next_steps = ["Add one concrete action tomorrow."]
+        print("Nothing recorded. Add a real shipped item, lesson, or next step; no streak entry created.")
+        return []
 
     linkedin_angle = args.linkedin_angle
     if not linkedin_angle and not args.quick:
